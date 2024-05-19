@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Message</title>
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+           background-image: url(./images/user-mess.jpg);
+
+               background-position: center;
+             background-size: cover;
+               background-repeat: no-repeat;
+               height: 93vh;
+               color:black;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 25px;
+            background-color: #fff;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.4); /* Transparent white */
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            padding-left: 50px;
+         
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+            align-items: center;
+        }
+
+        input[type="submit"] {
+            width: 35%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color:#ccc;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            align-items: center;
+            margin: 20px;
+            
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #recommendation {
+            margin-top: 20px;
+        }
+        .button
+        {
+            display: flex;
+           
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Submit Queries</h1>
+    <form id="messageForm" action="/message" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="names" required><br><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="messages" rows="4" cols="50" required></textarea><br><br>
+        <div class="button">
+        <input type="submit" value="Submit" onclick="show()">
+          <input type="submit" value="Back" onclick="change()">
+          </div>
+    </form>
+    
+  </div>
+    <script>
+        function show()
+        {
+            alert("Thanks for your queries");
+        }
+        function change()
+        {
+            window.location.href  = "/home";
+        }
+    </script> 
+    <script src="../src/index.js"></script>
+</body>
+</html>
+
+

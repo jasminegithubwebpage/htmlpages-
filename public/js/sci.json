@@ -1,0 +1,79 @@
+[
+  {
+    "title": "The War in the Air",
+    "author": "H. G. Wells",
+    "description": "A thrilling science fiction novel depicting aerial warfare and its impact on society",
+    "image": "images/a_brief_history_of_time.jpg",
+    "view": "json/books/The War in the Air.pdf"
+  },
+  {
+    "title": "On the Origin of Species",
+    "author": "Charles Darwin",
+    "description": "Theory of natural selection.",
+    "image": "images/on_the_origin_of_species.jpg",
+    "view": "json/books/On the Origin of Species.pdf"
+  },
+  {
+    "title": "Cosmos",
+    "author": "Carl Sagan",
+    "description": "Exploration of the universe and our place within it.",
+    "image": "images/cosmos.jpg",
+    "view": "https://www.gutenberg.org/ebooks/57574"
+  },
+  {
+    "title": "The Selfish Gene",
+    "author": "Richard Dawkins",
+    "description": "Gene-centered view of evolution.",
+    "image": "images/the_selfish_gene.jpg",
+    "view": "https://www.gutenberg.org/ebooks/61503"
+  },
+  {
+    "title": "The Elegant Universe",
+    "author": "Brian Greene",
+    "description": "Introduction to string theory and complex ideas.",
+    "image": "images/the_elegant_universe.jpg",
+    "view": "https://www.gutenberg.org/ebooks/29095"
+  },
+  {
+    "title": "On the Origin of Species",
+    "author": "Charles Darwin",
+    "description": "Theory of natural selection.",
+    "image": "images/on_the_origin_of_species.jpg",
+    "view": "https://www.gutenberg.org/ebooks/1228"
+  },
+  {
+    "title": "The Structure of Scientific Revolutions",
+    "author": "Thomas S. Kuhn",
+    "description": "Discussion on scientific paradigms.",
+    "image": "images/the_structure_of_scientific_revolutions.jpg",
+    "view": "https://www.gutenberg.org/ebooks/61506"
+  },
+  {
+    "title": "The Double Helix",
+    "author": "James D. Watson",
+    "description": "Discovery of DNA structure.",
+    "image": "images/the_double_helix.jpg",
+    "view": "https://www.gutenberg.org/ebooks/545"
+  },
+  {
+    "title": "Gödel, Escher, Bach",
+    "author": "Douglas Hofstadter",
+    "description": "Exploration of mathematics, art, and music.",
+    "image": "images/godel_escher_bach.jpg",
+    "view": "https://www.gutenberg.org/ebooks/1381"
+  },
+  {
+    "title": "The Making of the Atomic Bomb",
+    "author": "Richard Rhodes",
+    "description": "History of the atomic bomb's development.",
+    "image": "images/the_making_of_the_atomic_bomb.jpg",
+    "view": "https://www.gutenberg.org/ebooks/23684"
+  },
+  {
+    "title": "The Emperor of All Maladies",
+    "author": "Siddhartha Mukherjee",
+    "description": "Biography of cancer.",
+    "image": "images/the_emperor_of_all_maladies.jpg",
+    "view": "https://www.gutenberg.org/ebooks/55319"
+  }
+]

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Messages</title>
+    <style>
+        body
+{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    
+}
+        /* Styles for the header */
+header {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  padding: 10px; /* Padding */
+  text-align: center; /* Center-align text */
+}
+h1{
+    color: white;
+}
+/* Styles for the table */
+table {
+  background-color: rgba(255, 255, 255, 0.8); /* Transparent white */
+  width: 60%; /* Width of the table */
+  margin: 0 auto; /* Center-align the table */
+  border-collapse: collapse; /* Collapse borders */
+}
+
+/* Styles for table headers */
+th {
+  background-color: grey; /* Green background */
+  color: white; /* White text */
+  padding: 10px; /* Padding */
+}
+
+/* Styles for table cells */
+td {
+  border: 1px solid #dddddd; /* Border */
+  text-align: center; /* Left-align text */
+  padding: 8px; /* Padding */
+}
+
+/* Styles for table rows */
+tr:nth-child(even) {
+  background-color: #f2f2f2; /* Light gray background for even rows */
+}
+
+/* Style for the Remove button */
+button {
+  background-color:skyblue; /* Red background */
+  color: white; /* White text */
+  padding: 5px 10px; /* Padding */
+  border: none; /* No border */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 5px;
+}
+
+/* Style for the Remove button on hover */
+button:hover {
+  background-color: green; /* Darker red background on hover */
+}
+    </style>
+</head>
+<body>
+    <center><h1>QUERIES</h1></center>                                                                   
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Message</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each messages}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.message}}</td>
+                <td>
+                 <form action="/removeMessage" method="POST">
+                        <input type="hidden" name="studentName" value="{{this.name}}">
+                        <button type="submit">Accept</button>
+                    </form>
+                    </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</body>
+</html>
+
+
+
+
+
+{{!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Messages</title>
+</head>
+<body>
+    <h1>Admin Messages</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each messages}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.message}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</body>
+</html> --}}

@@ -1,0 +1,56 @@
+[
+  {
+    "title": "HTML",
+    "author": "John Smith",
+    "description": "Learn the basics of HTML for web development.",
+    "view": "json/books/HTML.pdf"
+  },
+  {
+    "title": "CSS",
+    "author": "Emily Johnson",
+    "description": "Explore cascading style sheets for styling web pages.",
+    "view": "json/books/CSS.pdf"
+  },
+  {
+    "title": "JavaScript",
+    "author": "Michael Williams",
+    "description": "Dive into the world of JavaScript programming.",
+    "view": "#"
+  },
+  {
+    "title": "Python",
+    "author": "Sarah Brown",
+    "description": "Master Python programming language for various applications.",
+    "view": "#"
+  },
+  {
+    "title": "Java",
+    "author": "David Jones",
+    "description": "Develop applications using the versatile Java programming language.",
+    "view": "#"
+  },
+  {
+    "title": "PHP",
+    "author": "Jessica Martinez",
+    "description": "Create dynamic web pages with PHP scripting language.",
+    "view": "#"
+  },
+  {
+    "title": "React",
+    "author": "Christopher Davis",
+    "description": "Build interactive user interfaces with React JavaScript library.",
+    "view": "#"
+  },
+  {
+    "title": "Node.js",
+    "author": "Amanda Wilson",
+    "description": "Learn server-side JavaScript programming with Node.js.",
+    "view": "#"
+  },
+  {
+    "title": "SQL",
+    "author": "Matthew Thompson",
+    "description": "Manage and query databases using SQL language.",
+    "view": "#"
+  }
+]

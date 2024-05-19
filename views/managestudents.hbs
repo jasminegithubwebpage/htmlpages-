@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Students</title>
+    <style>
+      body
+{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/emoji.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    
+}
+        /* Styles for the header */
+header {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  padding: 10px; /* Padding */
+  text-align: center; /* Center-align text */
+}
+h1
+{
+  color:white;
+}
+/* Styles for the table */
+table {
+  background-color: rgba(255, 255, 255, 0.8); /* Transparent white */
+  width: 60%; /* Width of the table */
+  margin: 0 auto; /* Center-align the table */
+  border-collapse: collapse; /* Collapse borders */
+}
+
+/* Styles for table headers */
+th {
+  background-color: grey; /* Green background */
+  color: white; /* White text */
+  padding: 10px; /* Padding */
+}
+
+/* Styles for table cells */
+td {
+  border: 1px solid #dddddd; /* Border */
+  text-align: center; /* Left-align text */
+  padding: 8px; /* Padding */
+}
+
+/* Styles for table rows */
+tr:nth-child(even) {
+  background-color: #f2f2f2; /* Light gray background for even rows */
+}
+
+/* Style for the Remove button */
+button {
+  background-color: green; /* Red background */
+  color: white; /* White text */
+  padding: 5px 10px; /* Padding */
+  border: none; /* No border */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 5px;
+}
+
+/* Style for the Remove button on hover */
+button:hover {
+  background-color: red; /* Darker red background on hover */
+}
+
+    </style>
+</head>
+<body>
+    <center><h1>LIBRARY STUDENTS</h1></center>
+    <table>
+        <thead>
+            <tr>
+                <th>LIB_ID</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each students}}
+            <tr>
+                <td>{{this.libraryId}}</td>
+                <td>{{this.name}}</td>
+                <td>
+                    <form action="/removestudent" method="POST">
+                        <input type="hidden" name="studentId" value="{{this._id}}">
+                        <button type="submit">Remove</button>
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</body>
+</html>

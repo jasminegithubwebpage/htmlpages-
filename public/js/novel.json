@@ -1,0 +1,53 @@
+[
+  {
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      
+      "description": "Southern drama by Harper Lee.",
+      "view": "/json/books/to kill a mocking bird.pdf"
+  },
+  {
+      "title": "The Works of Guy de Maupassant, Volume 2",
+      "author": "George Orwell",
+      
+      "description": "Orwellian dystopia by Orwell.",
+      "view": "/json/books/Orwellian dystopia by Orwell.pdf"
+  },
+  {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+    
+      "description": "Regency romance by Austen.",
+      "view": "/json/books/The Project Gutenberg eBook of Pride and prejudice, by Jane Austen.pdf"
+  },
+
+ 
+  {
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+ 
+   "description": "Victorian classic by Brontë.",
+    "view": "json/books/The Great Gatsby.pdf"
+},
+{
+    "title": "Memoirs of My Dead Life",
+    "author": " George Moore",
+    
+    "description": "Fantasy journey by Tolkien.",
+    "view": "https://www.gutenberg.org/cache/epub/15453/pg15453-images.html"
+},
+{
+    "title": "Frankenstein",
+    "author": "Mary Shelley",
+
+    "description": "Gothic horror by Shelley.",
+    "view": "https://www.gutenberg.org/cache/epub/84/pg84-images.html"
+},
+  {
+      "title": "The Picture of Dorian Gray",
+      "author": "Oscar Wilde",
+    
+      "description": "Decadent tale by Wilde.",
+      "view": "https://www.gutenberg.org/cache/epub/174/pg174-images.html"
+  }
+]

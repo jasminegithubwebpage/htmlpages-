@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Recommendations</title>
+    <style>
+        body {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/3.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        /* Styles for the header */
+        header {
+            background-color: darkgrey;
+            /* Green background */
+            color: white;
+            /* White text */
+            padding: 2px;
+            /* Padding */
+            text-align: center;
+            /* Center-align text */
+            height: 10%;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        /* Styles for the table */
+        table {
+            background-color: rgba(255, 255, 255, 0.8);
+            /* Transparent white */
+            width: 80%;
+            /* Width of the table */
+            margin: 20px auto;
+            /* Center-align the table */
+            border-collapse: collapse;
+            /* Collapse borders */
+        }
+
+        /* Styles for table headers */
+        th {
+            background-color: grey;
+            /* Green background */
+            color: white;
+            /* White text */
+            padding: 10px;
+            /* Padding */
+            text-align: center;
+            /* Center-align text */
+        }
+
+        /* Styles for table cells */
+        td {
+            border: 1px solid #dddddd;
+            /* Border */
+            text-align: center;
+            /* Center-align text */
+            padding: 10px;
+            /* Padding */
+            color: black
+        }
+
+        /* Style for the Remove button */
+        button {
+            background-color: darkgray;
+            /* Blue background */
+            color: white;
+            /* White text */
+            padding: 5px 10px;
+            /* Padding */
+            border: none;
+            /* No border */
+            cursor: pointer;
+            /* Cursor on hover */
+            border-radius: 5px;
+        }
+
+        /* Style for the Remove button on hover */
+        button:hover {
+            background-color: #2980b9;
+            /* Darker blue background on hover */
+        }
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    color:black;
+    
+}
+
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 80%; /* Maximum width */
+    max-height: 80%; /* Maximum height */
+    overflow: auto; /* Enable scrolling if content exceeds the modal size */
+    box-sizing: border-box;
+    text-align: center; /* Center align content */
+}
+
+
+.modal-content label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="file"],
+.modal-content select,
+.modal-content textarea {
+    width: calc(100% - 22px); /* Adjusting for padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.modal-content input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>RECOMMENDATIONS</h1>
+    </header>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each recommendations}}
+            <tr>
+                <td>{{this.title}}</td>
+                <td>{{this.description}}</td>
+                <td>
+                    <button>ADD</button>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+    <div id="addBookModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Book</h2>
+            <form action="/upload" class="addBook" id="addBookForm" method="POST" enctype="multipart/form-data">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required><br>
+
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author" required><br>
+
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="history">History</option>
+                    <option value="novel">Novel</option>
+                    <option value="science_fiction">Science Fiction</option>
+                    <option value="course"> Course</option>
+                </select><br>                                           
+
+                <label for="description">Description:</label><br>
+                <textarea id="description" name="description" rows="4" cols="50" required></textarea><br>
+
+                <label for="pdfFile">Upload Book:</label>
+                <input type="file" id="pdfFile" name="pdfFile" accept=".pdf" required><br>
+
+                <input type="submit" value="Add Book">
+            </form>
+        </div>
+    </div>
+
+    <script>
+       document.addEventListener("DOMContentLoaded", () => {
+    const addBookModal = document.getElementById("addBookModal");
+    const buttons = document.querySelectorAll("button");
+    const closeButton = document.querySelector(".close");
+
+    // Loop through each button and attach click event listener
+    buttons.forEach(button => {
+        button.onclick = () => {
+            addBookModal.style.display = "block";
+        };
+    });
+
+    closeButton.onclick = () => {
+        addBookModal.style.display = "none";
+    };
+
+    window.onclick = (event) => {
+        if (event.target == addBookModal) {
+            addBookModal.style.display = "none";
+        }
+    };
+});
+
+    </script>
+
+</body>
+
+</html>

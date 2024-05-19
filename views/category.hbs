@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ category }} Books</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        /* Main container style */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .search-input-container {
+            position: relative;
+        }
+
+        /* Search bar style */
+        #searchInput {
+            padding: 10px 35px 10px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 300px;
+        }
+
+        /* Title style */
+        #tit {
+            text-align: center;
+        }
+
+        /* Table style */
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            border: 2px solid #333;
+            background-color: #fff;
+        }
+
+        th,
+        td {
+            padding: 20px;
+            border: 1px solid #333;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        td img {
+            display: block;
+            margin: auto;
+        }
+
+        td img:hover {
+            transform: scale(1.1);
+        }
+
+        td a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        td a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="tit"><i class="fas fa-book"></i> Books</h1>
+    <!-- Search bar positioned on the right side, aligned with the heading -->
+    <div class="container">
+        <div class="search-input-container">
+            <input type="text" id="searchInput" placeholder="Search by title...">
+            <i class="fas fa-search search-icon"></i>
+        </div>
+    </div>
+    <center>
+        <table id="book-table" border="5px">
+
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Description</th>
+                    <th>View</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each books}}
+                <tr>
+                    <td>{{this.title}}</td>
+                    <td>{{this.author}}</td>
+                    <td>{{this.description}}</td>
+                    <td><a href="{{this.view}}" target="_blank">View</a></td>
+                    {{!-- <td><a href="/books/:bookId" onclick="openPDF('{{this.pdfLink}}')">View</a></td> --}}
+                    {{!-- <td><a href="/books/{{this._id}}" onclick="openPDF('{{this.pdfLink}}')">View</a></td> --}}
+                    {{!-- <td><a href="/view/:id" onclick="openPDF('{{this.pdfLink}}')">View</a></td> --}}
+
+
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </center>
+    {{#if isAdmin}}
+    <div id="addBookModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Book</h2>
+            <form id="addBookForm">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required><br>
+                {{!-- <label for="image">Image Upload:</label>
+                <input type="file" id="image" name="image" accept="image/*" required><br> --}}
+                <label for="description">Description:</label><br>
+                <textarea id="description" name="description" rows="4" cols="50" required></textarea><br>
+                <label for="bookFile">Upload Book:</label>
+                <input type="file" id="bookFile" name="bookFile" accept=".pdf,.epub,.txt" required><br>
+                <input type="submit" value="Add Book">
+            </form>
+        </div>
+    </div>
+    {{/if}}
+    <script>
+        // Function to filter books based on search input
+        function filterBooks() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const bookRows = document.querySelectorAll('#book-table tbody tr'); // Update selector to target table body rows
+
+            bookRows.forEach(row => {
+                const title = row.querySelector('td:first-child').innerText.toLowerCase();
+                if (title.includes(searchInput)) {
+                    row.style.display = ''; // Display rows that match search criteria
+                } else {
+                    row.style.display = 'none'; // Hide rows that do not match search criteria
+                }
+            });
+        }
+
+        // Call filterBooks function when user types in the search input
+        document.getElementById('searchInput').addEventListener('input', filterBooks);
+
+
+        // Extract category from URL query string
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category');
+        //console.log(category);
+        // Call fetchBooksByCategory function with the selected category
+        //fetchBooksByCategory(category);
+        const cat = category.toUpperCase();
+        document.getElementById('tit').innerHTML = `<i class="fas fa-book"></i> ${cat} BOOKS`;
+
+
+        const addBookModal = document.getElementById("addBookModal");
+        const addButton = document.querySelector(".add-button");
+        const closeButton = document.querySelector(".close");
+
+        addButton.onclick = () => {
+            addBookModal.style.display = "block";
+        };
+
+        closeButton.onclick = () => {
+            addBookModal.style.display = "none";
+        };
+
+        window.onclick = (event) => {
+            if (event.target == addBookModal) {
+                addBookModal.style.display = "none";
+            }
+        };
+
+        //opening pdf in iframe
+        function openPDF(pdfLink) {
+            const pdfViewer = document.createElement('iframe');
+            pdfViewer.src = pdfLink;
+            pdfViewer.width = '100%';
+            pdfViewer.height = '600px';
+            pdfViewer.frameBorder = '0';
+            pdfViewer.style.border = 'none';
+
+            const modalBody = document.querySelector('.modal-content'); // Update this selector as per your modal structure
+            modalBody.innerHTML = ''; // Clear existing content
+            modalBody.appendChild(pdfViewer);
+
+            // Show the modal if it's not already displayed
+            const addBookModal = document.getElementById('addBookModal');
+            addBookModal.style.display = 'block';
+        }
+
+    </script>
+
+</body>
+
+</html>

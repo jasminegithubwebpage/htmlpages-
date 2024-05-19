@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+    <book>
+        <title>Book Title 1</title>
+        <author>Author Name 1</author>
+        <category>Category 1</category>
+    </book>
+    <book>
+        <title>Book Title 2</title>
+        <author>Author Name 2</author>
+        <category>Category 2</category>
+    </book>
+    <!-- More books go here -->
+</library>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGNUP</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <h1>E-LIBRARY MANAGEMENT SYSTEM</h1>
+        <form id="form" action="/signup" method="post">
+            <h2>SIGNUP</h2>
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="name">
+                <div class="error" id="username-error"></div>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password">
+                <div class="error" id="password-error"></div>
+            </div>
+            
+            <div class="input-group">
+                <label for="cpassword">Confirm Password</label>
+                <input type="password" id="cpassword" name="cpassword">
+                <div class="error" id="cpassword-error"></div>
+            </div>
+            
+            <button type="submit">SIGN UP</button>
+            <a href="/login">CLICK HERE TO LOGIN</a>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('form').addEventListener('submit', function(event) {
+            var username = document.getElementById('username').value.trim();
+            var password = document.getElementById('password').value.trim();
+            var cpassword = document.getElementById('cpassword').value.trim();
+            var usernameError = document.getElementById('username-error');
+            var passwordError = document.getElementById('password-error');
+            var cpasswordError = document.getElementById('cpassword-error');
+            var isValid = true;
+
+            // Reset error messages and input styles
+            usernameError.innerText = '';
+            usernameError.parentNode.classList.remove('error');
+            passwordError.innerText = '';
+            passwordError.parentNode.classList.remove('error');
+            cpasswordError.innerText = '';
+            cpasswordError.parentNode.classList.remove('error');
+
+            // Validation for username
+            if (username === '') {
+                usernameError.innerText = 'Username is required.';
+                usernameError.parentNode.classList.add('error');
+                isValid = false;
+            }
+
+            // Validation for password
+            if (password === '') {
+                passwordError.innerText = 'Password is required.';
+                passwordError.parentNode.classList.add('error');
+                isValid = false;
+            } else if (password.length < 8) {
+                passwordError.innerText = 'Password must be at least 8 characters long.';
+                passwordError.parentNode.classList.add('error');
+                isValid = false;
+            }
+
+            // Validation for confirm password
+            if (cpassword === '') {
+                cpasswordError.innerText = 'Confirm Password is required.';
+                cpasswordError.parentNode.classList.add('error');
+                isValid = false;
+            } else if (password !== cpassword) {
+                cpasswordError.innerText = 'Passwords do not match.';
+                cpasswordError.parentNode.classList.add('error');
+                isValid = false;
+            }
+
+            if (!isValid) {
+                // Prevent form submission if validation fails
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

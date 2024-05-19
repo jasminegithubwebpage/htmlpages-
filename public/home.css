@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image:  url(./images/home.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: row
+    ;
+    width: 100%;
+    /* align-items: center; */
+}
+
+h1 {
+    margin: 0; /* Remove default margin */
+    padding: 20px;
+    background-color:darkgray;
+    text-align: center;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.options {
+   /* background-color: rgba(255, 255, 255, 0.4);  Transparent white */
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 200px;
+    margin-left: 20px;
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+    opacity: 0.8;
+}
+
+
+.options ul {
+    padding: 0;
+    margin: 0;
+}
+
+.options li {
+    margin-bottom: 10px;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+a
+{
+    text-decoration: none;
+    color:black;
+    font-weight: 700;
+    font-size: 18px;
+}
+#disp {
+justify-content: center;
+float: right;
+visibility: hidden;
+margin-left: 300px;
+}
+/* #profile-section
+{
+    visibility: hidden;
+} */
+#disp h2
+{
+    color: white;
+    margin-left: 200px;
+}
+#book-list {
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+}
+
+.card {
+    width: 800px; /* Set card width to fill the container */
+    margin-bottom: 20px; /* Add space between cards */
+    border: 1px solid #ddd; /* Add a border around cards */
+    border-radius: 5px; /* Rounded corners */
+    padding: 40px; /* Add padding inside cards */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    background-color: #f9f9f9; /* Light background color */
+    margin: 30px;
+}
+
+.card img {
+    width: 100%; /* Make images fill the card width */
+    border-radius: 5px 5px 0 0; /* Rounded top corners for images */
+}
+
+.card h3 {
+    margin: 10px 0; /* Add margin around heading */
+    font-size: 1.2em; /* Set heading font size */
+}
+
+.card p {
+    margin: 0; /* Remove default paragraph margin */
+} 
+
+.card a {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.card a:hover {
+    background-color: #0056b3;
+} 
+
+/* Add this to your CSS file or within a <style> tag in your HTML */
+
+/* Profile Section Styles */
+/* #profile-section {
+    height: 300px;
+    width: 400px;
+    margin-right: 300px;
+    border: 2px solid #ccc; 
+    border-radius: 10px; 
+    padding: 20px;
+    text-align: center; 
+    margin-top: 20px; 
+    background-color: rgba(255, 255, 255, 0.8); 
+} */
+#profile-section {
+    height: 250px;
+    width: 400px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 50px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 40px auto; /* Auto margin horizontally and 20px top and bottom */
+}
+
+
+#profile-image {
+    width: 100px; /* Adjust image width */
+    height: 100px; /* Adjust image height */
+    border-radius: 50%; /* Make image circular */
+}
+
+#profile-name,
+#library-id {
+    font-size: 18px; /* Bigger font size */
+    margin-top: 30px; /* Add some space between elements */
+}

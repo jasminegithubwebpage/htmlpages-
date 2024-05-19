@@ -1,0 +1,62 @@
+[
+  {
+    "title": "The Outline of History: Being a Plain History of Life and Mankind",
+    "author": "H.G. Wells",
+    "description": "A comprehensive overview of human history from prehistoric times to the early 20th century.",
+    "view": "/json/books/The Outline of History Being a Plain History of Life and Mankind.pdf"
+  },
+  {
+    "title": "The Histories",
+    "author": "Herodotus",
+    "description": "Often considered the first work of history in Western literature, Herodotus provides an account of the Greco-Persian Wars and various cultures of the ancient world.",
+    "view": "/json/books/The Histories.pdf"
+  },
+  {
+    "title": "The History of Rome",
+    "author": "Titus Livius (Livy)",
+    "description": "Livy's monumental work covers the history of Rome from its legendary foundation to the reign of Augustus.",
+    "view": "/json/books/The History of Rome.pdf"
+  },
+  {
+    "title": "The History of England",
+    "author": "David Hume",
+    "description": "Hume's history of England provides a detailed account of British history from the Roman conquest to the Glorious Revolution.",
+    "view": "/json/books/The History of England.pdf"
+  },
+  {
+    "title": "The History of the Peloponnesian War",
+    "author": "Thucydides",
+    "description": "Thucydides' work is a primary source for the history of the Peloponnesian War between Athens and Sparta.",
+    "view": "/json/books/The History of the Peloponnesian War.pdf"
+  },
+  {
+    "title": "The Decline and Fall of the Roman Empire",
+    "author": "Edward Gibbon",
+    "description": "Gibbon's magisterial work traces the history of the Roman Empire from its zenith to its collapse in the West.",
+    "view": "/json/books/The Decline and Fall of the Roman Empire.pdf"
+  },
+  {
+    "title": "The History of the Reign of Ferdinand and Isabella the Catholic",
+    "author": "William H. Prescott",
+    "description": "Prescott's narrative history covers the reign of the Catholic Monarchs of Spain, Ferdinand II of Aragon and Isabella I of Castile.",
+    "view": "/json/books/The History of the Reign of Ferdinand and Isabella the Catholic.pdf"
+  },
+  {
+    "title": "The History of the Thirty Years' War",
+    "author": "Friedrich Schiller",
+    "description": "Schiller's history recounts the complex events of the Thirty Years' War in Central Europe during the 17th century.",
+    "view": "/json/books/The History of the Thirty Years' War.pdf"
+  },
+  {
+    "title": "The History of the Conquest of Mexico",
+    "author": "William H. Prescott",
+    "description": "Prescott's account details the conquest of the Aztec Empire by Hernán Cortés in the early 16th century.",
+    "view": "/json/books/The History of the Conquest of Mexico.pdf"
+  },
+  {
+    "title": "The Wars of the Jews",
+    "author": "Flavius Josephus",
+    "description": "Josephus, a first-century Jewish historian, provides a detailed account of the Jewish revolt against the Roman Empire and the subsequent destruction of Jerusalem.",
+    "view": "/json/books/The Wars of the Jews.pdf"
+  }
+]

@@ -1,0 +1,48 @@
+[
+    {
+      "category": "novel",
+      "books": [
+        {
+          "title": "Sample Novel 1",
+          "image": "images/novel1.jpg",
+          "description": "Description of Sample Novel 1"
+        },
+        {
+          "title": "Sample Novel 2",
+          "image": "images/novel2.jpg",
+          "description": "Description of Sample Novel 2"
+        }
+      ]
+    },
+    {
+      "category": "sci",
+      "books": [
+        {
+          "title": "Sample Science Book 1",
+          "image": "images/science1.jpg",
+          "description": "Description of Sample Science Book 1"
+        },
+        {
+          "title": "Sample Science Book 2",
+          "image": "images/science2.jpg",
+          "description": "Description of Sample Science Book 2"
+        }
+      ]
+    },
+    {
+      "category": "history",
+      "books": [
+        {
+          "title": "Sample History Book 1",
+          "image": "images/history1.jpg",
+          "description": "Description of Sample History Book 1"
+        },
+        {
+          "title": "Sample History Book 2",
+          "image": "images/history2.jpg",
+          "description": "Description of Sample History Book 2"
+        }
+      ]
+    }
+  ]
+  

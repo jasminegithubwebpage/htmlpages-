@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Message</title>
+   
+</head>
+<body>
+    <h1>Submit Message</h1>
+    <form id="messageForm" action="/message" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="names" required><br><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="messages" rows="4" cols="50" required></textarea><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <p id="successMessage" style="display: none; color: green;">Message submitted successfully!</p>
+
+    <script>
+        document.getElementById("messageForm").addEventListener("submit", async function(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+            const form = event.target; // Get the form element
+
+            // Fetch options
+            const options = {
+                method: form.method,
+                body: new FormData(form)
+            };
+
+            try {
+                // Send form data to the server
+                const response = await fetch(form.action, options);
+                  console.log(new FormData(form));
+                  console.log('jas');
+                if (response.ok) {
+                    // Show the success message
+                    document.getElementById("successMessage").style.display = "block";
+                    // Reset the form
+                    form.reset();
+                } else {
+                    console.error("Error submitting message:", response.statusText);
+                }
+            } catch (error) {
+                console.error("Error submitting message:", error);
+            }
+        });
+    </script>
+
+<script src="../src/index.js"></script>
+</body>
+</html>
